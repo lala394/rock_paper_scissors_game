@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RPSgame</title>
+</head>
+<body>
+
+    <script>
+
+            var wins = 0 
+            var losses = 0
+            var ties = 0
+            var i = 0
+
+            while (i < 5){
+
+            var options = ['r', 'p', 's']
+            var userChoice = prompt("Rock, paper or scissors?")
+
+            var autoChoice = Math.floor (Math.random()*3+1)
+            if (autoChoice === 1){
+                var computerChoice = "rock"
+            }
+            else if (autoChoice === 2){
+                var computerChoice = "paper"
+            }
+            else if (autoChoice === 3){
+                var computerChoice  = "scissors"
+            }
+
+            alert (computerChoice)
+
+
+            if (userChoice === 'r' && computerChoice === "scissors" || userChoice === 'p' && computerChoice=== "rock" || userChoice === 's' && computerChoice === "paper"){
+                alert ("You win!")
+                wins++
+            }
+            else if (userChoice === 'r' && computerChoice === "paper" || userChoice === 'p' && computerChoice === "scissors" || userChoice === 's' && computerChoice === "rock" || userChoice === ""){
+                alert ("You lose!")
+                losses++
+            }
+
+            else {
+                alert ("This round is a tie. Try again!")
+                ties++
+            }
+            i++
+            }
+
+            if (wins > losses){
+                alert ("Your wins: " + wins + '\n' + "Your losses: " + losses + '\n' + "Your ties: " + ties + '\n'+'\n' + "                     You win :) Congratulations!" )
+            }
+            else if (wins < losses){
+                alert ("Your wins: " + wins + '\n' + "Your losses: " + losses + '\n' + "Your ties: " + ties + '\n'+'\n' + "                      You lose :( Press Ctrl+R to try again!" )
+            }
+            else {
+                alert ("Your wins: " + wins + '\n' + "Your losses: " + losses + '\n' + "Your ties: " + ties + '\n'+'\n' + "            This game is a tie. Press Ctrl+R to try again!" )
+            }
+
+    </script>
+
+</body>
+</html>
